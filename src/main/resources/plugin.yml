@@ -1,0 +1,7 @@
+name: Cosmetics
+version: 1.0.0
+main: com.rowlingsrealm.cosmetics.CosmeticsPlugin
+
+description: Rowlings Realms cosmetics!
+website: http://rowlingsrealm.com
+authors: [Tyler Grissom]
