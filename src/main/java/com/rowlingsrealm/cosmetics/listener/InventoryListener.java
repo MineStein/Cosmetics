@@ -3,6 +3,7 @@ package com.rowlingsrealm.cosmetics.listener;
 import com.google.common.base.Preconditions;
 import com.rowlingsrealm.cosmetics.CosmeticsPlugin;
 import com.rowlingsrealm.cosmetics.item.ItemUtility;
+import com.rowlingsrealm.cosmetics.menu.WandSkinsMenu;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.bukkit.Material;
@@ -42,12 +43,14 @@ public class InventoryListener implements Listener {
             Preconditions.checkNotNull(i);
 
             if (ItemUtility.isSimilar(i, Material.BLAZE_POWDER, "Wand Skins")) {
-                // TODO Needs to be handled in-plugin
+                new WandSkinsMenu(plugin).open(p);
             } else if (ItemUtility.isSimilar(i, Material.CHAINMAIL_HELMET, "Hats")) {
                 p.performCommand("hats");
             } else if (ItemUtility.isSimilar(i, Material.MOB_SPAWNER, "Pets")) {
                 p.performCommand("pets");
             }
+
+            return;
         }
     }
 }
