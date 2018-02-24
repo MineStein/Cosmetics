@@ -9,6 +9,7 @@ import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -55,6 +56,8 @@ public class CosmeticsMenu {
                     "",
                     c("&6&lClick &7to view available hats")
             ));
+
+            m.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
 
             hats.setItemMeta(m);
         }
