@@ -74,8 +74,8 @@ public class CosmeticsMenu {
         }
 
         inventory.setItem(10, wandSkins);
-        inventory.setItem(13, wandSkins);
-        inventory.setItem(16, wandSkins);
+        inventory.setItem(13, hats);
+        inventory.setItem(16, pets);
 
         return inventory;
     }
