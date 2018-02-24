@@ -1,6 +1,7 @@
 package com.rowlingsrealm.cosmetics.menu;
 
 import com.rowlingsrealm.cosmetics.CosmeticsPlugin;
+import com.rowlingsrealm.cosmetics.item.ItemBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.bukkit.Bukkit;
@@ -12,8 +13,6 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-
-import java.util.Arrays;
 
 /**
  * Copyright Tyler Grissom 2018
@@ -32,49 +31,46 @@ public class CosmeticsMenu {
 
         // TODO animate these to show different items
 
-        ItemStack wandSkins = new ItemStack(Material.BLAZE_POWDER); {
-            ItemMeta m = wandSkins.getItemMeta();
+        ItemStack wandSkins = new ItemBuilder()
+                .type(Material.BLAZE_POWDER)
+                .name(c("&2Wand Skins"))
+                .lore(
+                        "",
+                        c("&8Alternative looks for your wand!"),
+                        "",
+                        c("&6&lClick &7to view available wand skins")
+                )
+                .build();
 
-            m.setDisplayName(c("&2Wand Skins"));
-            m.setLore(Arrays.asList(
-                    "",
-                    c("&8Alternative looks for your wand!"),
-                    "",
-                    c("&6&lClick &7to view available wand skins")
-            ));
+        ItemStack hats = new ItemBuilder()
+                .type(Material.CHAINMAIL_HELMET)
+                .name(c("&2Hats"))
+                .lore(
+                        "",
+                        c("&8Top hats for your character!"),
+                        "",
+                        c("&6&lClick &7to view available hats")
+                )
+                .build();
 
-            wandSkins.setItemMeta(m);
-        }
-
-        ItemStack hats = new ItemStack(Material.CHAINMAIL_HELMET); {
+        {
             ItemMeta m = hats.getItemMeta();
-
-            m.setDisplayName(c("&2Hats"));
-            m.setLore(Arrays.asList(
-                    "",
-                    c("&8Top hats for your character!"),
-                    "",
-                    c("&6&lClick &7to view available hats")
-            ));
 
             m.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
 
             hats.setItemMeta(m);
         }
 
-        ItemStack pets = new ItemStack(Material.MOB_SPAWNER); {
-            ItemMeta m = hats.getItemMeta();
-
-            m.setDisplayName(c("&2Pets"));
-            m.setLore(Arrays.asList(
-                    "",
-                    c("&8Companions for your character!"),
-                    "",
-                    c("&6&lClick &7to view available pets")
-            ));
-
-            pets.setItemMeta(m);
-        }
+        ItemStack pets = new ItemBuilder()
+                .type(Material.MOB_SPAWNER)
+                .name(c("&2Pets"))
+                .lore(
+                        "",
+                        c("&8Companions for your character!"),
+                        "",
+                        c("&6&lClick &7to view available pets")
+                )
+                .build();
 
         inventory.setItem(10, wandSkins);
         inventory.setItem(13, hats);
