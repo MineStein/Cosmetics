@@ -1,0 +1,7 @@
+wands:
+  elder:
+    material: diamond_pickaxe
+    data: 10
+    name: '&2Elder Wand'
+    lore:
+      - '&aWand of elder, never prosper'
