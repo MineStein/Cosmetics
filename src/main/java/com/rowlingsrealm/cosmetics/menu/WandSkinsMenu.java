@@ -15,6 +15,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.permissions.Permission;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -26,12 +27,13 @@ import java.util.List;
 @AllArgsConstructor
 public class WandSkinsMenu {
 
-    public class WandSkin {
+    public static class WandSkin {
 
         @Getter @Setter private Material material;
         @Getter @Setter private int data;
         @Getter @Setter private String name;
         @Getter @Setter private List<String> lore;
+        @Getter @Setter private Permission permission;
     }
 
     @Getter private CosmeticsPlugin plugin;
@@ -64,6 +66,7 @@ public class WandSkinsMenu {
             skin.setData(section.getInt("data"));
             skin.setLore(section.getStringList("lore"));
             skin.setName(section.getString("name"));
+            skin.setPermission(new Permission(section.getString("permission")));
 
             wandSkins.add(skin);
         }

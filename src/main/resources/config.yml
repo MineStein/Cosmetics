@@ -3,5 +3,6 @@ wands:
     material: diamond_pickaxe
     data: 10
     name: '&2Elder Wand'
+    permission: 'wands.elderwand'
     lore:
       - '&aWand of elder, never prosper'

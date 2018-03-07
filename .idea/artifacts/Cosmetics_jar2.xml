@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Cosmetics:jar2">
+    <output-path>$USER_HOME$/Desktop/Servers/Rowling's Realm Dev/plugins</output-path>
+    <root id="archive" name="Cosmetics.jar">
+      <element id="module-output" name="Cosmetics" />
+    </root>
+  </artifact>
+</component>

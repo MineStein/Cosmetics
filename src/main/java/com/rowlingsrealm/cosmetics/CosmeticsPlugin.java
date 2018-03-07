@@ -1,5 +1,7 @@
 package com.rowlingsrealm.cosmetics;
 
+import com.comphenix.protocol.ProtocolLibrary;
+import com.comphenix.protocol.ProtocolManager;
 import com.rowlingsrealm.cosmetics.command.CommandBase;
 import com.rowlingsrealm.cosmetics.command.CosmeticsCommand;
 import com.rowlingsrealm.cosmetics.listener.InventoryListener;
@@ -17,6 +19,9 @@ public class CosmeticsPlugin extends JavaPlugin {
     @Getter
     private CosmeticsPlugin plugin;
 
+    @Getter
+    private ProtocolManager protocolManager;
+
     private void registerCommand(String cmd, CommandBase base) {
         getCommand(cmd).setExecutor(base);
     }
@@ -31,6 +36,7 @@ public class CosmeticsPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
+        protocolManager = ProtocolLibrary.getProtocolManager();
 
         getConfig().options().copyDefaults(true);
         saveConfig();
